@@ -36,11 +36,16 @@ function CreateJSON(Parent, Current) {
   }
   else {
     /*Если файл*/
-    data.path = Parent + Current;
-    data.type = "file"
-    const file = require(Parent + Current)
-    data.title = (file.title)
-    data.content = (file)
+    var path = require('path')
+    var ext = path.extname(Current)
+    if (ext == ".json")
+    {
+      data.path = Parent + Current;
+      data.type = "file"
+      const file = require(Parent + Current)
+      data.title = (file.title)
+      data.content = (file)
+    }
   }
   return data;
 }
@@ -90,14 +95,18 @@ function CreateTrash(Trash) {
   let data = {}
   for (let i = 0; i <= LOTO.length-1; i++)
   {
-    const file = require(Trash + "/" + LOTO[i])
-    let obj = {
-      Name: LOTO[i],
-      Title: file.title,
-      Path: (Trash + "/" + LOTO[i]),
-      FileContext: file
+    var path = require('path')
+    var ext = path.extname(LOTO[i])
+    if (ext == ".json") {
+      const file = require(Trash + "/" + LOTO[i])
+      let obj = {
+        Name: LOTO[i],
+        Title: file.title,
+        Path: (Trash + "/" + LOTO[i]),
+        FileContext: file
+      }
+      arr.push(obj)
     }
-    arr.push(obj)
   }
   data.files = arr
   return data

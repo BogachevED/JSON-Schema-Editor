@@ -1,0 +1,5 @@
+This directory is intended for inactive files format .json. These files are requested by the client side from the server.
+
+Files located in this directory are displayed in the trash functionality window
+
+The files on which I check the functionality of the application are not added to the repository.
