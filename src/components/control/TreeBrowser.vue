@@ -1,35 +1,44 @@
 <template>
 	<div id="Node">
-		<div :style="{'margin-left': `${depth * 53}px`}">
-			<table cellpadding="8" cellspacing="0">
-				<tr>
-					<td id="el1">
-						<Button v-if="TreeNode.type == 'folder'" align="center" v-model="checked" icon="pi pi-angle-right" id="ButtonNode" style="border-radius: 20px" @click="nodeClicked">
-						</Button>
-					</td>
-					<td id="el2">
-						<div v-if="TreeNode.type == 'file'" id="FileField" style="border-radius: 8px" align="center" @click="PutToCode(TreeNode)">
+		<div :style="{'margin-left': `${depth * 64}px`}">
+			<div v-if="TreeNode.type == 'folder'" id="FolderNode">
+				<table cellpadding="8" cellspacing="0">
+					<tr>
+						<td id="el1">
+							<Button align="center" v-model="checked" icon="pi pi-angle-right" id="ButtonNode" style="border-radius: 20px" @click="nodeClicked"></Button>
+						</td>
+						<td id="el2">
+							<div id="FolderField" align="center">
 								<table cellpadding="5" cellspacing="0">
 									<tr>
-										<td id="col1"><i class="pi pi-file" style="font-size: 1rem"></i></td>
+										<td id="col1"><i class="pi pi-folder" style="font-size: 1.2rem"></i></td>
+										<td id="col2"><div id="TextField"><p>{{TreeNode.name}}</p></div></td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div v-if="TreeNode.type == 'file'" id="FileNode">
+				<table cellpadding="8" cellspacing="0">
+					<tr>
+						<td id="el1">
+							<div id="FileField" align="center" @click="PutToCode(TreeNode)">
+								<table cellpadding="5" cellspacing="0">
+									<tr>
+										<td id="col1"><i class="pi pi-file" style="font-size: 1.2rem"></i></td>
 										<td id="col2"><div id="TextField"><p>{{TreeNode.title}}</p></div></td>
 									</tr>
 								</table>
-						</div>
-						<div v-else id="FolderField" style="border-radius: 8px" align="center">
-							<table cellpadding="5" cellspacing="0">
-								<tr>
-									<td id="col1"><i class="pi pi-folder" style="font-size: 1rem"></i></td>
-									<td id="col2"><div id="TextField"><p>{{TreeNode.name}}</p></div></td>
-								</tr>
-							</table>
-						</div>
-					</td>
-					<td id="el3">
-							<Button v-if="TreeNode.type == 'file'" id="ButtonGoTrash" @click="GoTrash('top', TreeNode.path)" icon="pi pi-trash" class="p-mr-2" />
-					</td>
-				</tr>
-			</table>
+							</div>
+						</td>
+						<td id="el2">
+							<Button id="ButtonGoTrash" @click="GoTrash('top', TreeNode.path)" icon="pi pi-trash" class="p-mr-2" />
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 	<div v-if="expanded">

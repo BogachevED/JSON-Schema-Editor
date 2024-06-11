@@ -13,9 +13,10 @@ import Dropdown from 'primevue/dropdown'
 import Sidebar from 'primevue/sidebar'
 import TreeSelect from 'primevue/treeselect'
 import InputNumber from 'primevue/inputnumber'
-import 'primevue/resources/themes/own-theme/theme.css'//  theme (saga-blue/own-theme)
-import 'primevue/resources/primevue.min.css'//  core css
-import 'primeicons/primeicons.css'//  icons
+import 'primevue/resources/primevue.min.css' //core css
+import 'primeicons/primeicons.css' //icons style css
+import 'primevue/resources/themes/own-theme/theme.css' //own color theme
+import "./assets/style.css" //extension css
 
 const app = createApp(App)
 app.use(PrimeVue)
