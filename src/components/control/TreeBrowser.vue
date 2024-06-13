@@ -41,14 +41,16 @@
 			</div>
 		</div>
 	</div>
-	<div v-if="expanded">
-		<TreeBrowser
-			v-for="child in TreeNode.childrens"
-			:key="child.name"
-			:TreeNode="child"
-			:depth="depth + 1"
-		/>
-	</div>
+	<Transition name="fade">
+		<div v-if="expanded">
+			<TreeBrowser
+				v-for="child in TreeNode.childrens"
+				:key="child.name"
+				:TreeNode="child"
+				:depth="depth + 1"
+			/>
+		</div>
+	</Transition>
 	<div>
 		<Dialog id="FileGoTrashDialog" header="Отправка файла в коризну" v-model:visible="diaplayGoTrashDialog" style="border-radius: 8px" :style="{width: '50vw'}" :position="position" :modal="true">
 			<template #footer>
@@ -68,16 +70,15 @@
 						</td>
 						<td width="10%">
 							<div id="LoadIcon" align="center" style="border-radius: 4px">
-								<transition name="SpinFade">
+								<Transition name="SpinFade">
 									<i v-if="ShowSpin" id="Spin" class="pi pi-spin pi-spinner" style="font-size: 3rem"></i>
-								</transition>
+								</Transition>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</template>
 		</Dialog>
-		<Toast />
 	</div>
 </template>
 
@@ -101,7 +102,7 @@ export default {
 		GoTrash (position, Path) {
 			this.position = position
 			this.FilePath = Path
-      this.diaplayGoTrashDialog = true
+			this.diaplayGoTrashDialog = true
 		},
 		NoGoTrash () {
 			this.diaplayGoTrashDialog = false

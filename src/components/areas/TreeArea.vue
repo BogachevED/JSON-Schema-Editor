@@ -10,7 +10,9 @@
 			</table>
 		</div>
 		<div id="TreeWorkArea">
-			<TreeBrowser :TreeNode="Tree"></TreeBrowser>
+			<div id="PseudoElement">
+				<TreeBrowser :TreeNode="Tree"></TreeBrowser>
+			</div>
 		</div>
 		<Dialog id="LoadDialog" header="Импорт файла" v-model:visible="displayLoadDialog" style="border-radius: 8px" :style="{width: '50vw'}" :position="position" :modal="true">
 			<Toast />
@@ -31,9 +33,9 @@
 							</div></td>
 						<td width="10%">
 							<div id="LoadIcon" align="center" style="border-radius: 4px">
-								<transition name="SpinFade">
+								<Transition name="SpinFade">
 									<i v-if="ShowSpin" id="Spin" class="pi pi-spin pi-spinner" style="font-size: 3rem"></i>
-								</transition>
+								</Transition>
 							</div>
 						</td>
 					</tr>
@@ -58,9 +60,9 @@
 							</div></td>
 						<td width="10%">
 							<div id="LoadIcon" align="center" style="border-radius: 4px">
-								<transition name="SpinFade">
+								<Transition name="SpinFade">
 									<i v-if="ShowSpin" id="Spin" class="pi pi-spin pi-spinner" style="font-size: 3rem"></i>
-								</transition>
+								</Transition>
 							</div>
 						</td>
 					</tr>
