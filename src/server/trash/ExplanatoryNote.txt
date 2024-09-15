@@ -1,5 +1,3 @@
-This directory is intended for inactive files format .json. These files are requested by the client side from the server.
+This directory is intended for storing inactive format files.json. These files are requested by the client side from the server. Files located in this directory are displayed in the Recycle bin functionality window. The files that I use to check the functionality of the application are not added to the repository. To work, add your own .The json files are in the ./trash directory, however, do not create subdirectories inside.
 
-Files located in this directory are displayed in the trash functionality window
-
-The files on which I check the functionality of the application are not added to the repository.
+Этот каталог предназначен для хранения неактивных файлов формата .json. Эти файлы запрашиваются клиентской стороной с сервера. Файлы, расположенные в этом каталоге, отображаются в окне функциональности корзины. Файлы, по которым я проверяю функциональность приложения, не добавляются в хранилище. Для работы добавьте свой .json файлы в каталог ./trash, однако не создавайте подкаталоги внутри. 

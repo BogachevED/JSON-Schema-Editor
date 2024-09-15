@@ -1,5 +1,3 @@
-This directory is intended for active files format .json. These files are requested by the client side from the server.
+This directory is intended for active storage of format files.json. These files are requested by the client side from the server. Files located in this directory are displayed in one of the main windows of the application. The files that I use to test the functionality of the application are not added to the repository. To work with files, add your JSON Schema files to the directory ./files or subdirectories inside.
 
-Files located in this directory are displayed in one of the main windows of the application
-
-The files on which I check the functionality of the application are not added to the repository.
+Этот каталог предназначен для активного хранения файлов формата.json. Эти файлы запрашиваются клиентской стороной с сервера. Файлы, расположенные в этом каталоге, отображаются в одном из главных окон приложения. Файлы, которые я использую для проверки функциональности приложения, не добавляются в репозиторий. Для работы с файлами добавьте свои файлы JSON Schema в каталог ./files или подкаталоги внутри.
