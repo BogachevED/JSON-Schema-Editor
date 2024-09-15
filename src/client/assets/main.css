@@ -1,0 +1,243 @@
+/*Used Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300&display=swap');
+/*Elements Styles*/
+/**Base**/
+body {
+  background: rgb(38, 38, 117);
+  background: linear-gradient(
+    90deg,
+    rgba(38, 38, 117, 1) 0%,
+    rgba(223, 223, 223, 1) 40%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(223, 223, 223, 1) 60%,
+    rgba(38, 38, 117, 1) 100%
+  );
+  margin: 0%;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+}
+h2 {
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+}
+h3 {
+  font-family: 'Oswald', sans-serif;
+}
+p {
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
+span {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  color: #ffffff;
+}
+.p-button {
+  margin: 4px;
+}
+.p-button-icon {
+  color: #ffffff;
+}
+#Ground {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#HorBlockLeft {
+  display: inline-block;
+  width: 50px;
+  min-width: 50px;
+  min-height: 100vh;
+  background: #1c2f57;
+  margin-right: 0.1vw;
+}
+#HorBlockRight {
+  display: inline-block;
+  width: 97.2vw;
+  height: 100%;
+}
+#Hat {
+  width: 100%;
+}
+#UnderHat {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+}
+/**Window Headers**/
+#headerBG {
+  background: #1c2f57;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 20px;
+}
+#topline {
+  padding: 0;
+  width: 80%;
+  height: 3px;
+  border: none;
+  position: relative;
+  top: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(135, 169, 219, 1) 25%,
+    rgba(135, 169, 219, 1) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+#botline {
+  padding: 0;
+  width: 80%;
+  height: 3px;
+  border: none;
+  position: relative;
+  bottom: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(135, 169, 219, 1) 25%,
+    rgba(135, 169, 219, 1) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+/**Left Sidebar**/
+#LeftBar {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  height: 100%;
+}
+/**Tree Element**/
+#Tree {
+  display: inline-block;
+  background: #1c2f57;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-left: 2.5%;
+  margin-right: 1.25%;
+  margin-bottom: 2.5%;
+  min-width: 46.25%;
+  min-height: 235px;
+}
+#TreeButtonsArea {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+#TreeWorkArea {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+  margin-bottom: 4%;
+  border-radius: 10px;
+  border-color: #00000096;
+  background: #ffffff;
+  font-size: 12px;
+  transition: all 500ms ease;
+}
+#PseudoElement {
+  height: auto;
+}
+#Node {
+  width: 100%;
+  color: #000000;
+  margin-bottom: -1.5%;
+  user-select: none;
+}
+.fade-enter-active {
+  animation: fade-in 1.2s;
+  mask-image: linear-gradient(black, transparent);
+}
+.fade-leave-active {
+  animation: fade-out 0.4s;
+  mask-image: linear-gradient(black, transparent);
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+#FolderField {
+  background: #586c91;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 30px;
+  color: #ffffff;
+}
+#FileField {
+  background: #7d96c0;
+  color: #ffffff;
+  border-radius: 30px;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: transform 500ms ease;
+}
+#FileField:hover {
+  background: #407ee9;
+  transform: scale(1.03);
+  cursor: pointer;
+}
+#FileField:active {
+  background: #407ee9;
+  transform: scale(0.97);
+  outline: 2px solid #00000052;
+  outline-offset: -2px;
+}
+#FileNode {
+  margin-left: -10px;
+}
+#el1 {
+  padding-right: 0%;
+}
+#ButtonLoadDialog,
+#ButtonCreateDialog {
+  width: 96.5%;
+}
+/**Editor's Element**/
+#ButtonSave,
+#ButtonExport {
+  width: 96.5%;
+}
+#Code {
+  display: inline-block;
+  background: #1c2f57;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-left: 1.25%;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
+  min-width: 46.25%;
+  min-height: 235px;
+}
+#CodeButtonsArea {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
